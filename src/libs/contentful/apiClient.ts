@@ -1,7 +1,7 @@
 import { createClient } from 'contentful'
 
-const space = process.env.contentful_space || ''
-const cdaToken = process.env.contentful_cda_token || ''
+const space = process.env.CONTENTFUL_SPACE || ''
+const cdaToken = process.env.CONTENTFUL_CDA_TOKEN || ''
 
 export const apiClient = createClient({
   space: space,

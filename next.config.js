@@ -1,19 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path')
-const Dotenv = require('dotenv-webpack')
+require('dotenv').config()
 
 module.exports = {
-  webpack: config => {
-    config.plugins = config.plugins || []
-
-    config.plugins = [
-      ...config.plugins,
-      new Dotenv({
-        path: path.resolve(__dirname, '.env'),
-        systemvars: true
-      })
-    ]
-
-    return config
+  env: {
+    CONTENTFUL_SPACE: process.env.CONTENTFUL_SPACE,
+    CONTENTFUL_CDA_TOKEN: process.env.CONTENTFUL_CDA_TOKEN
   }
 }

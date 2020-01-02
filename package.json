@@ -10,6 +10,19 @@
     "build": "next build",
     "start": "next start"
   },
+  "now": {
+    "alias": "kiiiyo-io",
+    "env": {
+      "CONTENTFUL_SPACE": "@contentful-space",
+      "CONTENTFUL_CDA_TOKEN": "@contentful-cda-token"
+    },
+    "build": {
+      "env": {
+        "CONTENTFUL_SPACE": "@contentful-space",
+        "CONTENTFUL_CDA_TOKEN": "@contentful-cda-token"
+      }
+    }
+  },
   "dependencies": {
     "contentful": "^7.11.3",
     "date-fns": "^2.8.1",
@@ -22,12 +35,11 @@
     "@types/react": "^16.9.17",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
-    "dotenv-webpack": "^1.7.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
-    "path": "^0.12.7",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"
   }

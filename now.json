@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "alias": "kiiiyo-io",
+  "env": {
+    "CONTENTFUL_SPACE": "@contentful-space",
+    "CONTENTFUL_CDA_TOKEN": "@contentful-cda-token"
+  },
+  "build": {
+    "env": {
+      "CONTENTFUL_SPACE": "@contentful-space",
+      "CONTENTFUL_CDA_TOKEN": "@contentful-cda-token"
+    }
+  }
+}
