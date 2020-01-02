@@ -13,7 +13,7 @@ type ArticleFields = {
   slug: EntryFields.Text
   body: EntryFields.RichText
   author: EntryFields.Object
-  image: EntryFields.Object
+  image?: EntryFields.Object
   publishedAt: string
 }
 

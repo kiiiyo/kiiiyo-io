@@ -1,3 +1,4 @@
+import * as Domain from './domain'
 import * as Usecase from './usecase'
 
-export { Usecase }
+export { Domain, Usecase }
