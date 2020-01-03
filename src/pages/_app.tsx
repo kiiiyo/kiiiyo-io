@@ -1,9 +1,11 @@
 import App, { AppContext, AppProps } from 'next/app'
 import React from 'react'
 //
-import { GlobalStyle } from '../styles'
+import { themeStyle, globalStyle } from '../styles'
+import { ThemeProvider } from '../libs/contexts/ThemeContext'
 
-const GlobalStylePresenter = GlobalStyle.createStyle
+const theme = themeStyle.createTheme()
+const GlobalStyle = globalStyle.createStyle
 
 export default class extends App {
   /**
@@ -26,8 +28,10 @@ export default class extends App {
     const { Component, pageProps } = this.props
     return (
       <>
-        <Component {...pageProps} />
-        <GlobalStylePresenter />
+        <ThemeProvider value={theme}>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </ThemeProvider>
       </>
     )
   }

@@ -8,7 +8,7 @@ export const createStyle = createGlobalStyle`
   }
   body {
     height: 100%;
-    font-size: ${TYPOGRAPHY.FONT_SIZE_MOBILE_200}; /* 16px */
+    font-size: ${TYPOGRAPHY.FONT_SIZE_DESKTOP_200}; /* 16px */
     padding: 0;
     margin: 0;
     font-family: ${TYPOGRAPHY.FONT_TYPEFACES};
