@@ -2,6 +2,9 @@ import * as React from 'react'
 //
 import { Domain, Usecase } from '../features'
 import { contentful } from '../libs/'
+//
+import { Meta } from '../components/shareds'
+import { HomePage } from '../components/pages'
 
 type ArticleItems = Array<Domain.Article.Entity>
 
@@ -13,10 +16,12 @@ type Props = {
 }
 
 const Home = (props: Props) => {
+  const title = 'Home'
+
   return (
     <>
-      <div>{props.items[0].title}</div>
-      <div>{props.items[0].description}</div>
+      <Meta state={{ title }} />
+      <HomePage />
     </>
   )
 }
