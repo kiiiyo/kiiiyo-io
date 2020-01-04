@@ -2,7 +2,8 @@ import { FC } from 'react'
 //
 import { Domain } from '../../../features'
 import { GenericTemplate } from '../../templates'
-import { HeaderBar, Footer } from '../../organisms'
+import { ArticleSinglePaginator } from '../../molecules'
+import { HeaderBar, Footer, ArticleSingle } from '../../organisms'
 
 /**
  * Interface
@@ -29,7 +30,8 @@ export const ArticlePagePresenter: FC<ArticlePagePresenterProps> = props => {
   const link = '/'
   return (
     <GenericTemplate headerBar={<HeaderBar />} footer={<Footer />}>
-      aaaa
+      <ArticleSingle state={{ article }} />
+      <ArticleSinglePaginator state={{ link }} />
     </GenericTemplate>
   )
 }

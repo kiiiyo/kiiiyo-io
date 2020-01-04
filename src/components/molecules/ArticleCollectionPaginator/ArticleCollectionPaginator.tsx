@@ -143,7 +143,7 @@ const StyledNextButton = styled.button`
 `
 const StyledIcon = styled.div`
   width: 16px;
-  margin: 0 8px;
+  margin: 0 16px;
 `
 
 const StyledPageState = styled.div`

@@ -1,0 +1,1 @@
+export { ArticleSingleHeader } from './ArticleSingleHeader'
