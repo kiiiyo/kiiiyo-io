@@ -37,8 +37,6 @@ export const HomePagePresenter: React.FC<HomePagePresenterProps> = props => {
     actions: { handlePageChange }
   } = props
 
-  console.log(articleCollection)
-
   return (
     <GenericTemplate headerBar={<HeaderBar />} footer={<Footer />}>
       {articleCollection.length > 0 ? (
