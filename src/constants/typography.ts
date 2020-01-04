@@ -24,6 +24,16 @@ const FONT_TYPEFACES = [
   'sans-serif'
 ].join(',')
 
+const FONT_CODE_TYPEFACES = [
+  'source-code-pro',
+  'Menlo',
+  'Monaco',
+  'Consolas',
+  'Courier',
+  'New',
+  'monospace'
+].join(',')
+
 /**
  * Font size with Desktop
  */
@@ -64,6 +74,7 @@ const FONT_SIZE_MOBILE_1300 = '70px'
 
 export {
   FONT_TYPEFACES,
+  FONT_CODE_TYPEFACES,
   FONT_SIZE_DESKTOP_50,
   FONT_SIZE_DESKTOP_75,
   FONT_SIZE_DESKTOP_100,

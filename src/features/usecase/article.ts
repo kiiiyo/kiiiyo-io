@@ -58,7 +58,7 @@ export async function fetchArticle(params: FetchArticleParams) {
       : null
 
     const publishedAt = format(
-      new Date(sys.updatedAt.split('.')[0]),
+      new Date(sys.createdAt.split('.')[0]),
       'yyyy/MM/dd HH:mm'
     )
 
