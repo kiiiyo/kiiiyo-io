@@ -1,0 +1,1 @@
+export { ArticleCollectionMedia } from './ArticleCollectionMedia'

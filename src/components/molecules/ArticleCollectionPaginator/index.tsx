@@ -1,0 +1,1 @@
+export { ArticleCollectionPaginator } from './ArticleCollectionPaginator'

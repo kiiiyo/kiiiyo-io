@@ -1,0 +1,1 @@
+export { ArticleCollectionBody } from './ArticleCollectionBody'
