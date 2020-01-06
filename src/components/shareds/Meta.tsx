@@ -37,7 +37,7 @@ export const Meta: FC<MetaProps> = props => {
       />
       <script
         async
-        src={`"https://www.googletagmanager.com/gtag/js?id=${trackingId}"`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`}
       ></script>
       <script
         dangerouslySetInnerHTML={{
