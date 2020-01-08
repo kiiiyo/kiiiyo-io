@@ -1,8 +1,6 @@
 import App, { AppContext, AppProps } from 'next/app'
 import React from 'react'
-import Router from 'next/router'
 //
-import { initGA, logPageView } from '../libs/analytics'
 import { themeStyle, globalStyle } from '../styles'
 import { ThemeProvider } from '../libs/contexts/ThemeContext'
 
@@ -24,12 +22,6 @@ export default class extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
     return { pageProps }
-  }
-
-  componentDidMount() {
-    initGA()
-    logPageView()
-    Router.router?.events.on('routeChangeComplete', logPageView)
   }
 
   render() {
