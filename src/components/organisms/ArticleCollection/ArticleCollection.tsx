@@ -39,14 +39,18 @@ export const ArticleCollection: FC<ArticleCollectionProps> = props => {
     <>
       {articleCollection.map((article, index) => {
         const { author, image, publishedAt, title, description, slug } = article
-        const link = `/articles/${slug}`
+        //Note: https://nextjs.org/docs/old#with-link
+        const pageDirPath = `/articles/slug=${slug}`
+        const pageRoutingPath = `/articles/${slug}`
         return (
           <StyledContainer key={index} themes={themes}>
             {/* TODO: molecules */}
             <ArticleCollectionHeader state={{ author, publishedAt }} />
             <Divider />
             {image && <ArticleCollectionMedia state={{ image }} />}
-            <ArticleCollectionBody state={{ title, description, link }} />
+            <ArticleCollectionBody
+              state={{ title, description, pageDirPath, pageRoutingPath }}
+            />
           </StyledContainer>
         )
       })}

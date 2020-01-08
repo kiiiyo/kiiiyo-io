@@ -12,8 +12,9 @@ import { useTheme, Theme } from '../../../libs/hooks/useTheme'
 interface ArticleCollectionBodyProps {
   state: {
     title: Domain.Article.Text
-    link: string
     description: Domain.Article.Text
+    pageDirPath: string
+    pageRoutingPath: string
   }
 }
 
@@ -23,14 +24,14 @@ interface ArticleCollectionBodyProps {
 
 export const ArticleCollectionBody: FC<ArticleCollectionBodyProps> = props => {
   const {
-    state: { title, link, description }
+    state: { title, description, pageDirPath, pageRoutingPath }
   } = props
   const themes = useTheme()
-
+  //Note: https://nextjs.org/docs/old#with-link
   return (
     <StyledContainer themes={themes}>
       <StyledTitle themes={themes}>
-        <Link href={link}>
+        <Link href={pageDirPath} as={pageRoutingPath}>
           <StyledLink themes={themes}>{title}</StyledLink>
         </Link>
       </StyledTitle>
