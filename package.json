@@ -13,21 +13,6 @@
     "build": "next build",
     "start": "next start"
   },
-  "now": {
-    "alias": "kiiiyo-io",
-    "env": {
-      "CONTENTFUL_SPACE": "@contentful-space",
-      "CONTENTFUL_CDA_TOKEN": "@contentful-cda-token",
-      "GA_TRACKING_ID": "@ga-tracking-id"
-    },
-    "build": {
-      "env": {
-        "CONTENTFUL_SPACE": "@contentful-space",
-        "CONTENTFUL_CDA_TOKEN": "@contentful-cda-token",
-        "GA_TRACKING_ID": "@ga-tracking-id"
-      }
-    }
-  },
   "dependencies": {
     "@babel/core": "^7.7.7",
     "@contentful/rich-text-react-renderer": "^13.4.0",
