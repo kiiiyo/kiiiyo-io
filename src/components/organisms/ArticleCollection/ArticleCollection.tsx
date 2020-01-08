@@ -40,7 +40,7 @@ export const ArticleCollection: FC<ArticleCollectionProps> = props => {
       {articleCollection.map((article, index) => {
         const { author, image, publishedAt, title, description, slug } = article
         //Note: https://nextjs.org/docs/old#with-link
-        const pageDirPath = `/articles/slug=${slug}`
+        const pageDirPath = `/articles/[slug]`
         const pageRoutingPath = `/articles/${slug}`
         return (
           <StyledContainer key={index} themes={themes}>
