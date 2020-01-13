@@ -35,7 +35,9 @@ export const ArticleCollectionBody: FC<ArticleCollectionBodyProps> = props => {
           <StyledLink themes={themes}>{title}</StyledLink>
         </Link>
       </StyledTitle>
-      <StyledDescription themes={themes}>{description}</StyledDescription>
+      <StyledDescription themes={themes}>
+        <p>{description}</p>
+      </StyledDescription>
     </StyledContainer>
   )
 }
@@ -75,10 +77,7 @@ const StyledDescription = styled.div`
         margin: 0;
         padding: 0;
         color: ${palette.grey[700]};
-        font-size: ${typography.body.fontSize};
-        font-weight: ${typography.body.fontWeight};
-        line-height: ${typography.body.lineHeight};
-        letter-spacing: ${typography.body.letterSpacing};
+        ${typography.paragraph}
       }
     `
   }}
