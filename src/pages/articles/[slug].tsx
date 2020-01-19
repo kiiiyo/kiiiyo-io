@@ -12,11 +12,14 @@ type Props = {
 
 const Article = (props: Props) => {
   const { article } = props
-  const { title, description } = article
+  const { title, description, slug } = article
+  const domain = process.env.DOMAIN_URL || ''
+  const url = `${domain}/articles/${slug}`
+
   return (
     <>
       <Meta state={{ title, description }} />
-      <ArticlePage state={{ article }} />
+      <ArticlePage state={{ article, url }} />
     </>
   )
 }

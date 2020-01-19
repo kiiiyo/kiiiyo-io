@@ -13,6 +13,7 @@ type ArticleItem = Domain.Article.Entity
 
 type StateProps = {
   article: ArticleItem
+  url: string
 }
 
 interface ArticlePagePresenterProps {
@@ -25,12 +26,12 @@ interface ArticlePageProps {
 
 export const ArticlePagePresenter: FC<ArticlePagePresenterProps> = props => {
   const {
-    state: { article }
+    state: { article, url }
   } = props
   const link = '/'
   return (
     <GenericTemplate headerBar={<HeaderBar />} footer={<Footer />}>
-      <ArticleSingle state={{ article }} />
+      <ArticleSingle state={{ article, url }} />
       <ArticleSinglePaginator state={{ link }} />
     </GenericTemplate>
   )
