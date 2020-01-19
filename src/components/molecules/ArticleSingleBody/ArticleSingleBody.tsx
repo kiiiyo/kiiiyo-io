@@ -40,7 +40,7 @@ const StyledContainer = styled.div`
   ${({ theme }: { theme: Theme }) => {
     const { spacing } = theme
     return css`
-      padding: ${spacing(4)} ${spacing(4)} ${spacing(8)};
+      padding: ${spacing(4)};
     `
   }}
 `

@@ -13,4 +13,4 @@ export type IconSize =
   | '9x'
   | '10x'
 
-export type IconName = 'arrow-right' | 'arrow-left'
+export type IconName = 'arrow-right' | 'arrow-left' | 'github' | 'twitter'
