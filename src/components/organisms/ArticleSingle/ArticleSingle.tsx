@@ -5,7 +5,8 @@ import { Domain } from '../../../features'
 import { useTheme, Theme } from '../../../libs/hooks/useTheme'
 import {
   ArticleSingleHeader,
-  ArticleSingleBody
+  ArticleSingleBody,
+  ArticleAuthor
 } from '../../../components/molecules'
 import { Divider } from '../../../components/atoms/Divider'
 
@@ -39,6 +40,8 @@ export const ArticleSingle: React.FC<ArticleSingleProps> = props => {
       <ArticleSingleHeader state={{ title, author, publishedAt }} />
       <Divider />
       <ArticleSingleBody state={{ body }} />
+      <Divider />
+      <ArticleAuthor state={{ author }} />
     </StyledContainer>
   )
 }

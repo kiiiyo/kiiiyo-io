@@ -5,6 +5,7 @@ import { ArticleCollectionPaginator } from './ArticleCollectionPaginator'
 import { ArticleSingleHeader } from './ArticleSingleHeader'
 import { ArticleSingleBody } from './ArticleSingleBody'
 import { ArticleSinglePaginator } from './ArticleSinglePaginator'
+import { ArticleAuthor } from './ArticleAuthor'
 
 export {
   ArticleCollectionHeader,
@@ -13,5 +14,6 @@ export {
   ArticleCollectionPaginator,
   ArticleSingleHeader,
   ArticleSingleBody,
-  ArticleSinglePaginator
+  ArticleSinglePaginator,
+  ArticleAuthor
 }

@@ -3,6 +3,10 @@ import { EntryFields } from 'contentful'
 export type Id = string
 
 export type AuthorMetadata = {
+  [key: string]: {
+    url: string
+    name: string
+  }
   github: {
     url: string
     name: string

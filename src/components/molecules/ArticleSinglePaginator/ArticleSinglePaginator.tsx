@@ -30,7 +30,7 @@ export const ArticleCollectionPaginatorPresenter: FC<ArticleSinglePaginatorProps
         <Link href={link}>
           <StyledLink>
             <StyledIcon>
-              <Icon name="arrow-left" />
+              <Icon name="arrow-left" prefix="fas" />
             </StyledIcon>
             View all articles
           </StyledLink>

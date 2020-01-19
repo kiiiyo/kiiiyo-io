@@ -46,7 +46,7 @@ export const ArticleCollectionPaginatorPresenter: FC<ArticleCollectionPaginatorP
           onClick={() => handlePageChange(currentPage - 1)}
         >
           <StyledIcon>
-            <Icon name="arrow-left" />
+            <Icon name="arrow-left" prefix="fas" size="1x" />
           </StyledIcon>
           Previous
         </StyledPreviousButton>
@@ -63,7 +63,7 @@ export const ArticleCollectionPaginatorPresenter: FC<ArticleCollectionPaginatorP
         >
           Next
           <StyledIcon>
-            <Icon name="arrow-right" size="1x" />
+            <Icon name="arrow-right" prefix="fas" size="1x" />
           </StyledIcon>
         </StyledNextButton>
       )}

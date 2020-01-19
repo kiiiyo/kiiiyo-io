@@ -65,7 +65,7 @@ const StyledAuthorContainer = styled.div`
   ${({ themes }: { themes: Theme }) => {
     const { spacing } = themes
     return css`
-      padding: ${spacing(2)} ${spacing(4)} ${spacing(4)};
+      padding: ${spacing(2)} ${spacing(4)} ${spacing(3)};
       display: flex;
     `
   }}
