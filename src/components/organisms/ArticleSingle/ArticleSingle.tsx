@@ -17,6 +17,7 @@ import { Divider } from '../../../components/atoms/Divider'
 type ArticleItem = Domain.Article.Entity
 
 type StateProps = {
+  url: string
   article: ArticleItem
 }
 
@@ -31,13 +32,14 @@ interface ArticleSingleProps {
 export const ArticleSingle: React.FC<ArticleSingleProps> = props => {
   const {
     state: {
+      url,
       article: { title, author, publishedAt, image, body }
     }
   } = props
   const themes = useTheme()
   return (
     <StyledContainer themes={themes}>
-      <ArticleSingleHeader state={{ title, author, publishedAt }} />
+      <ArticleSingleHeader state={{ title, author, publishedAt, url }} />
       <Divider />
       <ArticleSingleBody state={{ body }} />
       <Divider />

@@ -1,9 +1,10 @@
 import { FC } from 'react'
 import styled, { css } from 'styled-components'
+import { FacebookShareButton, TwitterShareButton } from 'react-share'
 //
 import { Domain } from '../../../features'
 import { useTheme, Theme } from '../../../libs/hooks/useTheme'
-import { Divider } from '../../../components/atoms/Divider'
+import { Divider, Icon } from '../../../components/atoms'
 
 /**
  * Interface
@@ -11,41 +12,11 @@ import { Divider } from '../../../components/atoms/Divider'
 
 interface ArticleSingleHeaderProps {
   state: {
+    url: string
     title: string
     author: Domain.Author.Entity
     publishedAt: string
   }
-}
-
-/**
- * Generic Component
- */
-
-export const ArticleSingleHeader: FC<ArticleSingleHeaderProps> = props => {
-  const {
-    state: { title, author, publishedAt }
-  } = props
-  const themes = useTheme()
-  //
-  return (
-    <StyledContainer themes={themes}>
-      <StyledTitle themes={themes}>{title}</StyledTitle>
-      <Divider />
-      <StyledAuthorContainer themes={themes}>
-        <StyledAuthorImage
-          themes={themes}
-          alt={author.name}
-          src={author.imageUrl}
-        />
-        <div>
-          <StyledAuthorName themes={themes}>{author.name}</StyledAuthorName>
-          <StyledDate themes={themes} dateTime={publishedAt}>
-            {publishedAt}
-          </StyledDate>
-        </div>
-      </StyledAuthorContainer>
-    </StyledContainer>
-  )
 }
 
 /**
@@ -67,6 +38,7 @@ const StyledAuthorContainer = styled.div`
     return css`
       padding: ${spacing(2)} ${spacing(4)} ${spacing(3)};
       display: flex;
+      justify-content: flex-start;
     `
   }}
 `
@@ -120,3 +92,80 @@ const StyledDate = styled.time`
     `
   }}
 `
+
+const StyledShareAction = styled.div`
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+`
+
+// FIXME:
+const StyledShareButton = styled.span`
+  ${({ themes }: { themes: Theme }) => {
+    return css`
+      margin-left: 1rem;
+      color: ${themes.palette.grey[700]};
+      &:hover {
+        color: ${themes.palette.grey[600]};
+      }
+      &:active {
+        color: ${themes.palette.grey[800]};
+      }
+      > button:focus {
+        outline: 0 !important;
+      }
+    `
+  }}
+`
+
+const StyledShareButtonIcon = styled.span`
+  display: inline-block;
+  width: 1.5rem;
+`
+
+/**
+ * Generic Component
+ */
+
+export const ArticleSingleHeader: FC<ArticleSingleHeaderProps> = props => {
+  const {
+    state: { title, author, publishedAt, url }
+  } = props
+  const themes = useTheme()
+  //
+  return (
+    <StyledContainer themes={themes}>
+      <StyledTitle themes={themes}>{title}</StyledTitle>
+      <Divider />
+      <StyledAuthorContainer themes={themes}>
+        <StyledAuthorImage
+          themes={themes}
+          alt={author.name}
+          src={author.imageUrl}
+        />
+        <div>
+          <StyledAuthorName themes={themes}>{author.name}</StyledAuthorName>
+          <StyledDate themes={themes} dateTime={publishedAt}>
+            {publishedAt}
+          </StyledDate>
+        </div>
+        <StyledShareAction>
+          <StyledShareButton themes={themes}>
+            <FacebookShareButton url={url} quote={title}>
+              <StyledShareButtonIcon>
+                <Icon prefix="fab" name="facebook-square" />
+              </StyledShareButtonIcon>
+            </FacebookShareButton>
+          </StyledShareButton>
+          <StyledShareButton themes={themes}>
+            <TwitterShareButton url={url} title={title}>
+              <StyledShareButtonIcon>
+                <Icon prefix="fab" name="twitter" />
+              </StyledShareButtonIcon>
+            </TwitterShareButton>
+          </StyledShareButton>
+        </StyledShareAction>
+      </StyledAuthorContainer>
+    </StyledContainer>
+  )
+}
