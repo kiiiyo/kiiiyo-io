@@ -71,31 +71,27 @@ const StyledAuthorMetaLink = styled.a`
     const { palette } = themes
     return css`
       display: inline-flex;
-      margin-right: 0.5rem;
-      width: 1.75rem;
-      height: 1.75rem;
+      margin-right: 0.25rem;
+      width: 2rem;
+      height: 2rem;
       justify-content: center;
       align-items: center;
       border-radius: 0.25rem;
       :link {
-        background-color: ${palette.grey[50]};
-        border: 1px solid ${palette.grey[300]};
-        color: ${palette.grey[700]};
+        background-color: ${palette.common.white};
+        color: ${palette.grey[500]};
       }
       :visited {
-        background-color: ${palette.grey[50]};
-        border: 1px solid ${palette.grey[300]};
-        color: ${palette.grey[700]};
+        background-color: ${palette.common.white};
+        color: ${palette.grey[500]};
       }
       :hover {
-        background-color: ${palette.common.white};
-        border: 1px solid ${palette.grey[400]};
-        color: ${palette.grey[800]};
+        background-color: ${palette.grey[100]};
+        color: ${palette.grey[600]};
       }
       :active {
-        background-color: ${palette.grey[100]};
-        border: 1px solid ${palette.grey[500]};
-        color: ${palette.grey[900]};
+        background-color: ${palette.grey[200]};
+        color: ${palette.grey[700]};
       }
     `
   }}
