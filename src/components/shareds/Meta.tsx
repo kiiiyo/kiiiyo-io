@@ -8,18 +8,20 @@ import NextHead from 'next/head'
 type StateProps = {
   title?: string
   description?: string
+  image?: string
 }
 
 interface MetaProps {
   state: StateProps
 }
+const domain = process.env.DOMAIN_URL || ''
 
 const defaultTitle = "Kiiiyo's IO"
 const defaultDescription = "@Kiiiyo's Weblog です。"
 
 export const Meta: FC<MetaProps> = props => {
   const {
-    state: { title, description }
+    state: { title, description, image }
   } = props
   return (
     <NextHead>
@@ -33,7 +35,10 @@ export const Meta: FC<MetaProps> = props => {
         property="og:title"
         content={title ? `${title} - ${defaultTitle}` : defaultTitle}
       />
-      <meta property="og:image" content="/assets/image/share.png" />
+      <meta
+        property="og:image"
+        content={image ? image : `${domain}/assets/image/share.png`}
+      />
 
       <link
         rel="shortcut icon"
