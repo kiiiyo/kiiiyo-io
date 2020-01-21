@@ -2,6 +2,22 @@
 require('dotenv').config()
 
 module.exports = {
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.svg/,
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: '@svgr/webpack',
+          options: {
+            babel: false
+          }
+        }
+      ]
+    })
+
+    return config
+  },
   env: {
     DOMAIN_URL: process.env.DOMAIN_URL,
     CONTENTFUL_SPACE: process.env.CONTENTFUL_SPACE,
