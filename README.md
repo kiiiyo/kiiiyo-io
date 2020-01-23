@@ -4,6 +4,6 @@
 
 Hello guys :-) This product kiiiyo's weblog.
 
-![](https://img.shields.io/badge/node-v10.17.0-green)
+![](https://img.shields.io/badge/node-v12.12.0-green)
 
 </div>
