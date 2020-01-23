@@ -16,11 +16,11 @@ export const HeaderBar: React.FC = () => {
     <StyledHeaderBar themes={themes}>
       <StyledHeaderBarInner themes={themes}>
         <StyledLogotypeContainer>
-          <Logotype>
-            <Link href="/">
-              <StyledLink themes={themes}>Kiiiyo&#39;s IO</StyledLink>
-            </Link>
-          </Logotype>
+          <Link href="/">
+            <StyledLink themes={themes}>
+              <Logotype />
+            </StyledLink>
+          </Link>
         </StyledLogotypeContainer>
       </StyledHeaderBarInner>
     </StyledHeaderBar>

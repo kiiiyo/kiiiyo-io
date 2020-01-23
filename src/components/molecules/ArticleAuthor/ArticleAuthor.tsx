@@ -1,8 +1,8 @@
 import { FC } from 'react'
+import ReactMarkdown from 'react-markdown'
 import styled, { css } from 'styled-components'
 //
 import { Domain } from '../../../features'
-import { richTextToReactComponents } from '../../../libs/contentful'
 import { useTheme, Theme } from '../../../libs/hooks/useTheme'
 import { Icon } from '../../atoms'
 
@@ -121,7 +121,7 @@ export const ArticleAuthor: FC<ArticleAuthorProps> = props => {
         <div>
           <StyledAuthorName themes={themes}>{name}</StyledAuthorName>
           <StyledAuthorDescription themes={themes}>
-            {richTextToReactComponents(description)}
+            {description && <ReactMarkdown source={String(description)} />}
           </StyledAuthorDescription>
           <StyledAuthorMeta>
             {Object.keys(metadata).map((key: string, index: number) => {

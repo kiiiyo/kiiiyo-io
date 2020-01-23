@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import styled, { css } from 'styled-components'
+import ReactMarkdown from 'react-markdown'
 //
 import { Domain } from '../../../features'
-import { richTextToReactComponents } from '../../../libs/contentful'
 import { useTheme, Theme } from '../../../libs/hooks/useTheme'
 
 /**
@@ -23,11 +23,14 @@ export const ArticleSingleBody: FC<ArticleSingleBodyProps> = props => {
   const {
     state: { body }
   } = props
+
   const theme = useTheme()
 
   return (
     <StyledContainer theme={theme}>
-      <StyledBody theme={theme}>{richTextToReactComponents(body)}</StyledBody>
+      <StyledBody theme={theme}>
+        {body && <ReactMarkdown source={String(body)} />}
+      </StyledBody>
     </StyledContainer>
   )
 }
@@ -58,13 +61,13 @@ const StyledBody = styled.div`
       & h2 {
         color: ${palette.grey[800]};
         margin-top: ${spacing(12)};
-        margin-bottom: ${spacing(8)};
+        margin-bottom: ${spacing(6)};
         ${typography.h2};
       }
       & h3 {
         color: ${palette.grey[800]};
         margin-top: ${spacing(12)};
-        margin-bottom: ${spacing(8)};
+        margin-bottom: ${spacing(6)};
         ${typography.h3};
       }
       & h4 {

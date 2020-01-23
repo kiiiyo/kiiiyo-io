@@ -51,19 +51,19 @@ export const defaultTypography = {
     letterSpacing: '.04em'
   },
   h1: {
-    fontSize: TYPOGRAPHY.FONT_SIZE_DESKTOP_900,
-    fontWeight: 700,
-    lineHeight: 1.5,
-    letterSpacing: '.04em'
-  },
-  h2: {
     fontSize: TYPOGRAPHY.FONT_SIZE_DESKTOP_700,
     fontWeight: 700,
     lineHeight: 1.5,
     letterSpacing: '.04em'
   },
-  h3: {
+  h2: {
     fontSize: TYPOGRAPHY.FONT_SIZE_DESKTOP_500,
+    fontWeight: 700,
+    lineHeight: 1.5,
+    letterSpacing: '.04em'
+  },
+  h3: {
+    fontSize: TYPOGRAPHY.FONT_SIZE_DESKTOP_400,
     fontWeight: 700,
     lineHeight: 1.5,
     letterSpacing: '.04em'
@@ -91,8 +91,8 @@ export const defaultTypography = {
     lineHeight: 1.5
   },
   paragraph: {
-    fontSize: TYPOGRAPHY.FONT_SIZE_DESKTOP_100,
-    lineHeight: 1.5
+    fontSize: TYPOGRAPHY.FONT_SIZE_DESKTOP_200,
+    lineHeight: 1.8
   },
   pre: {
     fontFamily: TYPOGRAPHY.FONT_CODE_TYPEFACES,
